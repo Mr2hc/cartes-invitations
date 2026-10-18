@@ -1,0 +1,18 @@
+# Android / Gradle
+/build/
+/.gradle/
+/app/build/
+
+# Keystore & signing config (should NOT be versionned)
+key.properties
+*.jks
+
+# Generated APKs
+*.apk
+
+# IDE files
+.idea/
+*.iml
+
+# Logs & temporary files
+*.log

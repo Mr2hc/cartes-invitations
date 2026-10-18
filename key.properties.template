@@ -1,0 +1,10 @@
+﻿# Fichier de configuration de signature — NE PAS VERSIONNER (ajouter key.properties dans .gitignore)
+# Renommez ce fichier en key.properties et remplissez vos vraies valeurs
+
+storeFile=release-keystore.jks
+storePassword=VOTRE_MOT_DE_PASSE_KEYSTORE
+keyAlias=VOTRE_ALIAS_CLE
+keyPassword=VOTRE_MOT_DE_PASSE_CLE
+
+# Commande pour générer un keystore :
+# keytool -genkey -v -keystore release-keystore.jks -alias invitecard -keyalg RSA -keysize 2048 -validity 10000

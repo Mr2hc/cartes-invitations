@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créateur d'Invitation Élégante - Juliette & Evariste</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=2">
+</head>
+<body>
+
+    <!-- APPLICATION CONTAINER (Hidden during print) -->
+    <div class="app-container no-print">
+        
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="header-logo">
+                <svg viewBox="0 0 100 100" width="40" height="40">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+                    <path d="M35,60 C40,40 60,40 65,60" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                    <path d="M45,45 C50,35 50,35 55,45" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                    <circle cx="50" cy="32" r="4" fill="url(#pearl-grad)"/>
+                    <circle cx="38" cy="48" r="3" fill="url(#pearl-grad)"/>
+                    <circle cx="62" cy="48" r="3" fill="url(#pearl-grad)"/>
+                    <defs>
+                        <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#d4af37" />
+                            <stop offset="50%" stop-color="#f3e5ab" />
+                            <stop offset="100%" stop-color="#aa7c11" />
+                        </linearGradient>
+                        <radialGradient id="pearl-grad" cx="35%" cy="35%" r="70%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="40%" stop-color="#fdfbf7"/>
+                            <stop offset="100%" stop-color="#d1c2a5"/>
+                        </radialGradient>
+                    </defs>
+                </svg>
+                <h1>Atelier de Création d'Invitations</h1>
+            </div>
+            <div class="header-actions">
+                <button id="btn-guide" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Aide au Pliage
+                </button>
+                <button id="btn-print-main" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    Imprimer / PDF
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT -->
+        <main class="app-main">
+            
+            <!-- LEFT COLUMN: 3D INTERACTIVE CARD VIEW -->
+            <section class="card-viewer-section">
+                <div class="viewer-container">
+                    <div class="scene-3d">
+                        <!-- 3D Card Object -->
+                        <div class="card-3d" id="invitation-card">
+                            
+                            <!-- LEFT MOVING PAGE (Folds open) -->
+                            <div class="card-page page-left" id="page-left">
+                                <!-- FRONT COVER (Recto - Face visible when closed) -->
+                                <div class="page-face face-front theme-pearl has-photo" id="face-front">
+                                    <div class="card-content-wrapper front-cover-layout">
+                                        <div class="cover-monogram cursive-font" data-bind="monogram">J&E</div>
+                                    </div>
+                                    <div class="decorations-front pearl-decor"></div>
+                                    <div class="page-shadow"></div>
+                                </div>
+                                <!-- INSIDE LEFT (Face visible when open) -->
+                                <div class="page-face face-inside-left theme-pearl has-watermark" id="face-inside-left">
+                                    <div class="decorations-top pearl-decor"></div>
+                                    <div class="card-content-wrapper text-left-align">
+                                        <h3 class="inside-title cursive-font" data-bind="inside-left-title">Heureux, nous le sommes</h3>
+                                        <h4 class="inside-subtitle" data-bind="inside-left-subtitle">Amoureux, encore plus</h4>
+                                        
+                                        <div class="inside-body-text">
+                                            <p data-bind="inside-left-p1">Au fil du temps, notre amour a grandi, et aujourd'hui, c'est avec émotion et bonheur que nous avons choisi de nous unir pour la vie.</p>
+                                            <p data-bind="inside-left-p2">Nous serions honorés de vous compter parmi nous pour célébrer cette journée remplie d'amour, de joie et de partage.</p>
+                                        </div>
+                                    </div>
+                                    <div class="decorations-bottom pearl-decor"></div>
+                                    <div class="page-shadow"></div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT STATIONARY PAGE -->
+                            <div class="card-page page-right" id="page-right">
+                                <!-- INSIDE RIGHT (Face visible when open) -->
+                                <div class="page-face face-inside-right theme-pearl has-watermark" id="face-inside-right">
+                                    <div class="decorations-top pearl-decor"></div>
+                                    <div class="card-content-wrapper text-right-align">
+                                        <h3 class="date-header" data-bind="inside-right-header">Le vendredi 28 août 2026</h3>
+                                        
+                                        <!-- Emblem Divider -->
+                                        <div class="emblem-divider">
+                                            <svg viewBox="0 0 100 30" width="80" height="24">
+                                                <path d="M10,15 L40,15 Q50,15 50,12 T50,15 L90,15" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                                                <path d="M50,7 C47,12 43,15 50,23 C57,15 53,12 50,7 Z" fill="currentColor"/>
+                                                <circle cx="43" cy="15" r="2.5" fill="currentColor"/>
+                                                <circle cx="57" cy="15" r="2.5" fill="currentColor"/>
+                                            </svg>
+                                        </div>
+                                        
+                                        <div class="program-section">
+                                            <div class="program-item">
+                                                <h4 class="program-title" data-bind="prog1-title">Cérémonie civile à 14h00</h4>
+                                                <p class="program-location" data-bind="prog1-loc">À la mairie d'Arcueil</p>
+                                                <p class="program-address" data-bind="prog1-addr">42 Rue Cauchy, 94110 Arcueil</p>
+                                            </div>
+                                            
+                                            <div class="program-item">
+                                                <h4 class="program-title" data-bind="prog2-title">Vin d'honneur & Dîner</h4>
+                                                <p class="program-location" data-bind="prog2-loc">Après l'émotion de ce « oui », nous aurons le plaisir de vous retrouver autour d'un vin d'honneur à partir de 18h, suivi d'un dîner servi à 20h</p>
+                                                <p class="program-address" data-bind="prog2-addr">Au Palais de l'Épi d'Or, 3 Avenue de l'Épi d'Or, 94800 Villejuif</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="dress-code-box">
+                                            <span class="dress-code-label" data-bind="dress-label">Dress code :<br>✨ Chic & romantique ✨</span>
+                                        </div>
+
+                                        <p class="closing-sentence" data-bind="closing-text">Puis, place à la fête, aux rires, aux souvenirs et à une nuit que nous espérons inoubliable, jusqu'au petit matin...</p>
+                                        
+                                        <p class="poetic-sentence" data-bind="poetic-text">Parce qu'un moment aussi précieux ne saurait être complet sans les personnes que nous aimons,</p>
+                                        <p class="poetic-gift-sentence" data-bind="poetic-gift">votre présence sera notre plus beau cadeau.</p>
+                                        
+                                        <p class="signature cursive-font" data-bind="names">Juliette & EVARISTE</p>
+                                    </div>
+                                    <div class="decorations-bottom pearl-decor"></div>
+                                    <div class="page-shadow"></div>
+                                </div>
+                                <!-- BACK COVER (Verso - Back of the card) -->
+                                <div class="page-face face-back theme-pearl" id="face-back">
+                                    <div class="card-content-wrapper back-cover-layout">
+                                        <h2 class="back-title" data-bind="back-title-1">JULIETTE</h2>
+                                        <p class="back-conjunction cursive-font" data-bind="back-title-conj">et</p>
+                                        <h2 class="back-title" data-bind="back-title-2">EVARISTE</h2>
+                                        <p class="back-subtitle" data-bind="back-subtitle">- INVITATION -</p>
+                                    </div>
+                                    <div class="decorations-back pearl-decor"></div>
+                                    <div class="page-shadow"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CARD VIEWER CONTROLS -->
+                    <div class="viewer-controls">
+                        <button id="btn-toggle-fold" class="btn btn-secondary btn-icon">
+                            <span class="icon-open">📂 Ouvrir</span>
+                            <span class="icon-close" style="display:none;">📁 Fermer</span>
+                        </button>
+                        <div class="control-slider-wrapper">
+                            <label for="slider-fold">Pliage :</label>
+                            <input type="range" id="slider-fold" min="0" max="100" value="0">
+                            <span id="label-fold-percent">0%</span>
+                        </div>
+                        <button id="btn-flip-card" class="btn btn-secondary">
+                            🔄 Voir le dos
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN: CUSTOMIZATION CONTROLS -->
+            <section class="card-editor-section">
+                <div class="editor-tabs">
+                    <button class="tab-btn active" data-tab="tab-theme">🎨 Thèmes</button>
+                    <button class="tab-btn" data-tab="tab-cover">📖 Extérieur</button>
+                    <button class="tab-btn" data-tab="tab-inside">✍️ Textes</button>
+                </div>
+
+                <div class="editor-panels">
+                    
+                    <!-- PANEL: THEMES -->
+                    <div class="editor-panel active" id="tab-theme">
+                        <h3>Choisissez un style visuel</h3>
+                        <p class="panel-desc">Sélectionnez parmi nos designs raffinés. Les décors et palettes s'adapteront automatiquement.</p>
+                        
+                        <div class="theme-selector-grid">
+                            <div class="theme-option-card active" data-theme="pearl">
+                                <div class="theme-preview theme-preview-pearl"></div>
+                                <span class="theme-name">Perles & Or</span>
+                            </div>
+                            <div class="theme-option-card" data-theme="gold">
+                                <div class="theme-preview theme-preview-gold"></div>
+                                <span class="theme-name">Or Royal</span>
+                            </div>
+                            <div class="theme-option-card" data-theme="floral">
+                                <div class="theme-preview theme-preview-floral"></div>
+                                <span class="theme-name">Blush Floral</span>
+                            </div>
+                            <div class="theme-option-card" data-theme="starry">
+                                <div class="theme-preview theme-preview-starry"></div>
+                                <span class="theme-name">Nuit Étoilée</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-bg-controls" style="margin-top: 24px;">
+                            <h3>Ajustements globaux</h3>
+                            <div class="control-group">
+                                <label for="select-font-names">Style de police (Noms) :</label>
+                                <select id="select-font-names" class="form-control">
+                                    <option value="'Great Vibes', cursive">Great Vibes (Cursive Élégante)</option>
+                                    <option value="'Playfair Display', serif">Playfair Display (Classique Serif)</option>
+                                    <option value="'Montserrat', sans-serif">Montserrat (Moderne Sans-Serif)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL: COVER -->
+                    <div class="editor-panel" id="tab-cover">
+                        <h3>Photo des mariés</h3>
+                        <p class="panel-desc">Téléchargez votre photo. Elle sera disposée sur le recto de la carte (avec des perles flottantes) et en filigrane à l'intérieur.</p>
+                        
+                        <div class="control-group">
+                            <label for="input-photo">Télécharger votre photo :</label>
+                            <input type="file" id="input-photo" class="form-control" accept="image/*">
+                        </div>
+
+                        <h3 style="margin-top: 24px;">Devant (Recto - Droite)</h3>
+                        <div class="control-group">
+                            <label for="input-monogram">Monogramme initiales :</label>
+                            <input type="text" id="input-monogram" class="form-control" value="J&E">
+                        </div>
+
+                        <h3 style="margin-top: 24px;">Dos (Verso - Gauche)</h3>
+                        <div class="control-group">
+                            <label for="input-back-title-1">Nom 1 (Haut) :</label>
+                            <input type="text" id="input-back-title-1" class="form-control" value="JULIETTE">
+                        </div>
+                        <div class="control-group">
+                            <label for="input-back-title-conj">Conjonction :</label>
+                            <input type="text" id="input-back-title-conj" class="form-control" value="et">
+                        </div>
+                        <div class="control-group">
+                            <label for="input-back-title-2">Nom 2 (Bas) :</label>
+                            <input type="text" id="input-back-title-2" class="form-control" value="EVARISTE">
+                        </div>
+                        <div class="control-group">
+                            <label for="input-back-subtitle">Sous-titre / Occasion :</label>
+                            <input type="text" id="input-back-subtitle" class="form-control" value="- INVITATION -">
+                        </div>
+                        
+                        <h3 style="margin-top: 24px;">Paramètres de signature</h3>
+                        <div class="control-group">
+                            <label for="input-names">Noms de signature :</label>
+                            <input type="text" id="input-names" class="form-control" value="Juliette & EVARISTE">
+                        </div>
+                    </div>
+
+                    <!-- PANEL: INSIDE TEXTS -->
+                    <div class="editor-panel" id="tab-inside">
+                        <h3>Volet Gauche (Message)</h3>
+                        <div class="control-group">
+                            <label for="input-left-title">Titre principal :</label>
+                            <input type="text" id="input-left-title" class="form-control" value="Heureux, nous le sommes">
+                        </div>
+                        <div class="control-group">
+                            <label for="input-left-subtitle">Sous-titre :</label>
+                            <input type="text" id="input-left-subtitle" class="form-control" value="Amoureux, encore plus">
+                        </div>
+                        <div class="control-group">
+                            <label for="input-left-p1">Paragraphe 1 :</label>
+                            <textarea id="input-left-p1" class="form-control" rows="3">Au fil du temps, notre amour a grandi, et aujourd'hui, c'est avec émotion et bonheur que nous avons choisi de nous unir pour la vie.</textarea>
+                        </div>
+                        <div class="control-group">
+                            <label for="input-left-p2">Paragraphe 2 :</label>
+                            <textarea id="input-left-p2" class="form-control" rows="3">Nous serions honorés de vous compter parmi nous pour célébrer cette journée remplie d'amour, de joie et de partage.</textarea>
+                        </div>
+
+                        <h3 style="margin-top: 24px;">Volet Droit (Programme & Infos)</h3>
+                        <div class="control-group">
+                            <label for="input-right-header">Date / En-tête :</label>
+                            <input type="text" id="input-right-header" class="form-control" value="Le vendredi 28 août 2026">
+                        </div>
+                        
+                        <div class="form-sub-section">
+                            <h4>Cérémonie Civile</h4>
+                            <div class="control-group">
+                                <label for="input-prog1-title">Titre et Horaire :</label>
+                                <input type="text" id="input-prog1-title" class="form-control" value="Cérémonie civile à 14h00">
+                            </div>
+                            <div class="control-group">
+                                <label for="input-prog1-loc">Lieu :</label>
+                                <input type="text" id="input-prog1-loc" class="form-control" value="À la mairie d'Arcueil">
+                            </div>
+                            <div class="control-group">
+                                <label for="input-prog1-addr">Adresse :</label>
+                                <input type="text" id="input-prog1-addr" class="form-control" value="42 Rue Cauchy, 94110 Arcueil">
+                            </div>
+                        </div>
+
+                        <div class="form-sub-section">
+                            <h4>Réception & Dîner</h4>
+                            <div class="control-group">
+                                <label for="input-prog2-title">Titre :</label>
+                                <input type="text" id="input-prog2-title" class="form-control" value="Vin d'honneur & Dîner">
+                            </div>
+                            <div class="control-group">
+                                <label for="input-prog2-loc">Lieu / Horaires :</label>
+                                <textarea id="input-prog2-loc" class="form-control" rows="3">Après l'émotion de ce « oui », nous aurons le plaisir de vous retrouver autour d'un vin d'honneur à partir de 18h, suivi d'un dîner servi à 20h</textarea>
+                            </div>
+                            <div class="control-group">
+                                <label for="input-prog2-addr">Adresse :</label>
+                                <textarea id="input-prog2-addr" class="form-control" rows="2">Au Palais de l'Épi d'Or, 3 Avenue de l'Épi d'Or, 94800 Villejuif</textarea>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="input-dress-label">Dress Code :</label>
+                            <textarea id="input-dress-label" class="form-control" rows="2">Dress code :
+✨ Chic & romantique ✨</textarea>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="input-closing-text">Phrase de transition :</label>
+                            <textarea id="input-closing-text" class="form-control" rows="2">Puis, place à la fête, aux rires, aux souvenirs et à une nuit que nous espérons inoubliable, jusqu'au petit matin...</textarea>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="input-poetic-text">Phrase finale (poétique) :</label>
+                            <textarea id="input-poetic-text" class="form-control" rows="2">Parce qu'un moment aussi précieux ne saurait être complet sans les personnes que nous aimons,</textarea>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="input-poetic-gift">Phrase de remerciement / cadeau :</label>
+                            <input type="text" id="input-poetic-gift" class="form-control" value="votre présence sera notre plus beau cadeau.">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL: HELP / GUIDE (Hidden by default) -->
+    <div id="modal-guide" class="modal-overlay no-print" style="display:none;">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Guide d'Impression & de Pliage 📖</h2>
+                <button id="btn-close-modal" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Pour obtenir une magnifique carte d'invitation à deux volets comme chez un imprimeur, suivez ce guide simple :</p>
+                
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <span class="step-num">1</span>
+                        <div>
+                            <h4>Type de Papier</h4>
+                            <p>Utilisez un papier épais de type **Bristol ou Canson (250g à 300g)** de format A4, de préférence blanc mat ou ivoire texturé.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-step">
+                        <span class="step-num">2</span>
+                        <div>
+                            <h4>Configuration d'Impression</h4>
+                            <p>Cliquez sur "Imprimer / PDF". Dans la boîte de dialogue de votre navigateur :
+                            <br>• Orientation : **Paysage** (A4 Landscape)
+                            <br>• Marges : **Aucune** (ou minimales)
+                            <br>• Imprimer en recto-verso : **Oui, retourner sur les bords courts** (Short edge binding)
+                            <br>• Graphiques d'arrière-plan : **Activer** (indispensable pour les motifs et couleurs !)</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-num">3</span>
+                        <div>
+                            <h4>Pliage précis</h4>
+                            <p>Une fois les deux faces imprimées, alignez les bords et marquez le pli vertical exactement au milieu (une ligne repère discrète est imprimée pour vous guider). Utilisez une règle et le dos d'un couteau pour marquer proprement le pli.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-guide-ok" class="btn btn-primary">J'ai compris</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRINT CONTAINER (Visible ONLY during print via CSS) -->
+    <div id="print-container" style="display: none;">
+        
+        <!-- PAGE 1: EXTERIOR (Back Cover on Left | Front Cover on Right) -->
+        <div class="print-page print-page-exterior theme-pearl" id="print-page-1">
+            <!-- BACK COVER (Left side of page 1) -->
+            <div class="print-half print-left-half" id="print-face-back">
+                <div class="card-content-wrapper back-cover-layout">
+                    <h2 class="back-title" data-bind="back-title-1">JULIETTE</h2>
+                    <p class="back-conjunction cursive-font" data-bind="back-title-conj">et</p>
+                    <h2 class="back-title" data-bind="back-title-2">EVARISTE</h2>
+                    <p class="back-subtitle" data-bind="back-subtitle">- INVITATION -</p>
+                </div>
+                <div class="decorations-back pearl-decor"></div>
+            </div>
+            
+            <!-- CENTRAL FOLDING LINE -->
+            <div class="print-fold-line"></div>
+            
+            <!-- FRONT COVER (Right side of page 1) -->
+            <div class="print-half print-right-half has-photo" id="print-face-front">
+                <div class="card-content-wrapper front-cover-layout">
+                    <div class="cover-monogram cursive-font" data-bind="monogram">J&E</div>
+                </div>
+                <div class="decorations-front pearl-decor"></div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: INTERIOR (Inside Left on Left | Inside Right on Right) -->
+        <div class="print-page print-page-interior theme-pearl" id="print-page-2">
+            <!-- INSIDE LEFT (Left side of page 2) -->
+            <div class="print-half print-left-half text-left-align has-watermark" id="print-face-inside-left">
+                <div class="decorations-top pearl-decor"></div>
+                <div class="card-content-wrapper">
+                    <h3 class="inside-title cursive-font" data-bind="inside-left-title">Heureux, nous le sommes</h3>
+                    <h4 class="inside-subtitle" data-bind="inside-left-subtitle">Amoureux, encore plus</h4>
+                    
+                    <div class="inside-body-text">
+                        <p data-bind="inside-left-p1">Au fil du temps, notre amour a grandi, et aujourd'hui, c'est avec émotion et bonheur que nous avons choisi de nous unir pour la vie.</p>
+                        <p data-bind="inside-left-p2">Nous serions honorés de vous compter parmi nous pour célébrer cette journée remplie d'amour, de joie et de partage.</p>
+                    </div>
+                </div>
+                <div class="decorations-bottom pearl-decor"></div>
+            </div>
+            
+            <!-- CENTRAL FOLDING LINE -->
+            <div class="print-fold-line"></div>
+            
+            <!-- INSIDE RIGHT (Right side of page 2) -->
+            <div class="print-half print-right-half text-right-align has-watermark" id="print-face-inside-right">
+                <div class="decorations-top pearl-decor"></div>
+                <div class="card-content-wrapper">
+                    <h3 class="date-header" data-bind="inside-right-header">Le vendredi 28 août 2026</h3>
+                    
+                    <div class="emblem-divider">
+                        <svg viewBox="0 0 100 30" width="80" height="24">
+                            <path d="M10,15 L40,15 Q50,15 50,12 T50,15 L90,15" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            <path d="M50,7 C47,12 43,15 50,23 C57,15 53,12 50,7 Z" fill="currentColor"/>
+                            <circle cx="43" cy="15" r="2.5" fill="currentColor"/>
+                            <circle cx="57" cy="15" r="2.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="program-section">
+                        <div class="program-item">
+                            <h4 class="program-title" data-bind="prog1-title">Cérémonie civile à 14h00</h4>
+                            <p class="program-location" data-bind="prog1-loc">À la mairie d'Arcueil</p>
+                            <p class="program-address" data-bind="prog1-addr">42 Rue Cauchy, 94110 Arcueil</p>
+                        </div>
+                        
+                        <div class="program-item">
+                            <h4 class="program-title" data-bind="prog2-title">Vin d'honneur & Dîner</h4>
+                            <p class="program-location" data-bind="prog2-loc">Après l'émotion de ce « oui », nous aurons le plaisir de vous retrouver autour d'un vin d'honneur à partir de 18h, suivi d'un dîner servi à 20h</p>
+                            <p class="program-address" data-bind="prog2-addr">Au Palais de l'Épi d'Or, 3 Avenue de l'Épi d'Or, 94800 Villejuif</p>
+                        </div>
+                    </div>
+
+                    <div class="dress-code-box">
+                        <span class="dress-code-label" data-bind="dress-label">Dress code :<br>✨ Chic & romantique ✨</span>
+                    </div>
+
+                    <p class="closing-sentence" data-bind="closing-text">Puis, place à la fête, aux rires, aux souvenirs et à une nuit que nous espérons inoubliable, jusqu'au petit matin...</p>
+                    
+                    <p class="poetic-sentence" data-bind="poetic-text">Parce qu'un moment aussi précieux ne saurait être complet sans les personnes que nous aimons,</p>
+                    <p class="poetic-gift-sentence" data-bind="poetic-gift">votre présence sera notre plus beau cadeau.</p>
+                    
+                    <p class="signature cursive-font" data-bind="names">Juliette & EVARISTE</p>
+                </div>
+                <div class="decorations-bottom pearl-decor"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MAIN APP SCRIPT -->
+    <script src="index.js?v=2"></script>
+</body>
+</html>
