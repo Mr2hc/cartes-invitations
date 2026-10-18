@@ -3,6 +3,11 @@ package com.invitecard.ui.dashboard
 import android.widget.Toast
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.scaleIn
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Canvas
@@ -271,14 +276,19 @@ fun TemplateCard(
     template: Template,
     onClick: () -> Unit
 ) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .aspectRatio(0.7f)
-            .clickable { onClick() },
-        shape = MaterialTheme.shapes.medium,
-        elevation = CardDefaults.cardElevation(4.dp)
+    AnimatedVisibility(
+        visible = true,
+        enter = fadeIn(spring(dampingRatio = Spring.DampingRatioMediumBouncy)) +
+                scaleIn(spring(dampingRatio = Spring.DampingRatioMediumBouncy), initialScale = 0.8f)
     ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .aspectRatio(0.7f)
+                .clickable { onClick() },
+            shape = MaterialTheme.shapes.medium,
+            elevation = CardDefaults.cardElevation(4.dp)
+        ) {
         Box {
             AsyncImage(
                 model = template.imageUrl,
@@ -314,6 +324,7 @@ fun TemplateCard(
                     )
                 }
             }
+        }
         }
     }
 }
