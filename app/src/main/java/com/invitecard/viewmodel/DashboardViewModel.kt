@@ -45,46 +45,46 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
 
         val categoryPhotos = mapOf(
             "Mariage" to listOf(
-                "photo-1512909006721-3d6018887383",
-                "photo-1522673607200-164d1b6ce486",
-                "photo-1511795409834-ef04bbd61622",
-                "photo-1583939003579-730e3918a45a",
-                "photo-1501281668745-f7f57925c3b4"
+                "photo-1519741497674-611481863552", // Couple enlacé et fleurs
+                "photo-1522673607200-164d1b6ce486", // Chaises fleuries réception jardin
+                "photo-1511795409834-ef04bbd61622", // Table banquet mariage
+                "photo-1583939003579-730e3918a45a", // Baiser des mariés sous pétales
+                "photo-1520854221256-17451cc331bf"  // Robe blanche et alliance
             ),
             "Anniversaire" to listOf(
-                "photo-1504196606672-aef5c9cefc92",
-                "photo-1558301211-0d8c8ddee6ec",
-                "photo-1530103862676-de8c9debad1d",
-                "photo-1513151233558-d860c5398176",
-                "photo-1513201099705-a9746e1e201f"
+                "photo-1504196606672-aef5c9cefc92", // Ballons multicolores
+                "photo-1558301211-0d8c8ddee6ec", // Gâteau d'anniversaire rose
+                "photo-1530103862676-de8c9debad1d", // Ballons pastels
+                "photo-1513151233558-d860c5398176", // Pluie de confettis
+                "photo-1513201099705-a9746e1e201f"  // Boîte cadeau ruban
             ),
             "Baptême" to listOf(
-                "photo-1549417229-aa67d3263c09",
-                "photo-1579783900882-c0d3dad7b119",
-                "photo-1519689680058-324335c77eba",
-                "photo-1478812954026-9c750f0e89fc",
-                "photo-1509198397868-475647b2a1e5"
+                "photo-1544126592-807ade215a0b", // Nouveau-né endormi dans des draps blancs
+                "photo-1510154221590-ff63e90a136f", // Mains protectrices sur petons de bébé
+                "photo-1491013516836-7db643ee125a", // Visage de bébé aux yeux bleus
+                "photo-1519689680058-324335c77eba", // Bébé souriant
+                "photo-1516627145497-ae6968895b74"  // Enfant sourire lumière douce
             ),
             "Fête" to listOf(
-                "photo-1492684223066-81342ee5ff30",
-                "photo-1513151233558-d860c5398176",
-                "photo-1618005182384-a83a8bd57fbe",
-                "photo-1620121692029-d088224ddc74",
-                "photo-1513151233558-d860c5398176"
+                "photo-1492684223066-81342ee5ff30", // Confettis festifs sur foule
+                "photo-1517457373958-b7bdd4587205", // Guirlandes et terrasse de fête
+                "photo-1496337589254-7e19d01cec44", // DJ et lumières de fête
+                "photo-1514525253161-7a46d19cd819", // Toast et ambiance soirée
+                "photo-1513151233558-d860c5398176"  // Confettis colorés
             ),
             "Business" to listOf(
-                "photo-1526253038957-bce54e05968e",
-                "photo-1486406146926-c627a92ad1ab",
-                "photo-1557804506-669a67965ba0",
-                "photo-1497366216548-37526070297c",
-                "photo-1562564055-71e051d33c19"
+                "photo-1526253038957-bce54e05968e", // Développeurs et ordinateurs
+                "photo-1486406146926-c627a92ad1ab", // Gratte-ciels corporate
+                "photo-1557804506-669a67965ba0", // Réunion tableau blanc
+                "photo-1497366216548-37526070297c", // Hall moderne entreprise
+                "photo-1562564055-71e051d33c19"  // Signature contrat
             ),
             "Baby Shower" to listOf(
-                "photo-1555252333-9f8e92e65df9",
-                "photo-1519689680058-324335c77eba",
-                "photo-1502086223501-7ea6ecd79368",
-                "photo-1544816155-12df9643f363",
-                "photo-1596461404969-9ae70f2830c1"
+                "photo-1555252333-9f8e92e65df9", // Petits pieds de bébé dans couverture blanche
+                "photo-1515488042361-ee00e0ddd4e4", // Tapis doudous bébé
+                "photo-1510154221590-ff63e90a136f", // Mains tenant les pieds de bébé
+                "photo-1491013516836-7db643ee125a", // Bébé mignon
+                "photo-1596461404969-9ae70f2830c1"  // Train en bois pastel
             )
         )
 
