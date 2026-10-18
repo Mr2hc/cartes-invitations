@@ -16,27 +16,29 @@ import java.io.OutputStream
 
 object CardExporter {
 
-    fun saveToGallery(context: Context, bitmap: Bitmap): Uri? = try {
-        val filename = "Invitation_${System.currentTimeMillis()}.png"
-        val contentValues = ContentValues().apply {
-            put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
-            put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                put(MediaStore.MediaColumns.RELATIVE_PATH, "Pictures/InviteCard")
+    fun saveToGallery(context: Context, bitmap: Bitmap): Uri? {
+        return try {
+            val filename = "Invitation_${System.currentTimeMillis()}.png"
+            val contentValues = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
+                put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    put(MediaStore.MediaColumns.RELATIVE_PATH, "Pictures/InviteCard")
+                }
             }
+
+            val resolver = context.contentResolver
+            val imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+                ?: return null
+
+            resolver.openOutputStream(imageUri)?.use { outputStream ->
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+            } ?: return null
+
+            imageUri
+        } catch (e: Exception) {
+            null
         }
-
-        val resolver = context.contentResolver
-        val imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-            ?: return null
-
-        resolver.openOutputStream(imageUri)?.use { outputStream ->
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-        } ?: return null
-
-        imageUri
-    } catch (e: Exception) {
-        null
     }
 
     fun shareImage(context: Context, uri: Uri) {

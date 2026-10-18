@@ -33,7 +33,7 @@ data class DashboardUiState(
 @HiltViewModel
 class DashboardViewModel @Inject constructor() : ViewModel() {
     companion object {
-        private val defaultCategories = listOf(
+        val defaultCategories = listOf(
             Category("Tous", Icons.Default.AllInclusive),
             Category("Mariage", Icons.Default.Favorite),
             Category("Anniversaire", Icons.Default.Cake),
@@ -42,23 +42,7 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
             Category("Business", Icons.Default.Business),
             Category("Baby Shower", Icons.Default.ChildFriendly)
         )
-    }
 
-    private val _uiState = MutableStateFlow(DashboardUiState(
-        categories = defaultCategories,
-        popularTemplates = generatePremiumTemplates()
-    ))
-    val uiState: StateFlow<DashboardUiState> = _uiState.asStateFlow()
-
-    fun selectCategory(categoryName: String?) {
-        _uiState.update { it.copy(selectedCategory = if (categoryName == "Tous") null else categoryName) }
-    }
-
-    fun selectStyle(styleName: String?) {
-        _uiState.update { it.copy(selectedStyle = styleName) }
-    }
-
-    companion object {
         val categoryPhotos = mapOf(
             "Mariage" to listOf(
                 "photo-1512909006721-3d6018887383",
@@ -109,12 +93,29 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
             val categories = listOf("Mariage", "Anniversaire", "Baptême", "Fête", "Business", "Baby Shower")
             
             val cat = categories[index % categories.size]
-            val photos = categoryPhotos[cat] ?: emptyList()
-            val photoIndex = (index / categories.size) % photos.size
-            val photoId = photos[photoIndex]
+            val photos = categoryPhotos[cat].orEmpty()
+            val photoId = if (photos.isNotEmpty()) {
+                photos[(index / categories.size) % photos.size]
+            } else {
+                "photo-1512909006721-3d6018887383"
+            }
             
             return "https://images.unsplash.com/$photoId?auto=format&fit=crop&w=800&q=80"
         }
+    }
+
+    private val _uiState = MutableStateFlow(DashboardUiState(
+        categories = defaultCategories,
+        popularTemplates = generatePremiumTemplates()
+    ))
+    val uiState: StateFlow<DashboardUiState> = _uiState.asStateFlow()
+
+    fun selectCategory(categoryName: String?) {
+        _uiState.update { it.copy(selectedCategory = if (categoryName == "Tous") null else categoryName) }
+    }
+
+    fun selectStyle(styleName: String?) {
+        _uiState.update { it.copy(selectedStyle = styleName) }
     }
 
     private fun generatePremiumTemplates(): List<Template> {

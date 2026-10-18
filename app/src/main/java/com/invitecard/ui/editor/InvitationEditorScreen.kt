@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
@@ -691,6 +692,7 @@ fun TextInputDialog(
     )
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ColorPickerDialog(
     isElementSelected: Boolean,
@@ -794,9 +796,10 @@ fun AIGenerationDialog(
     )
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun StickerMenuDialog(
-    stickers: List<androidx.compose.material.icons.ImageVector>,
+    stickers: List<ImageVector>,
     onStickerSelected: (Int) -> Unit,
     onDismiss: () -> Unit
 ) {
