@@ -6,6 +6,7 @@
 # Keystore & signing config (should NOT be versionned)
 key.properties
 *.jks
+local.properties
 
 # Generated APKs
 *.apk
